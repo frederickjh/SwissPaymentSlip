@@ -450,7 +450,7 @@ class OrangePaymentSlip extends PaymentSlip
         // Place code line
         if ($this->getDisplayCodeLine()) {
             $lines = [
-                $paymentSlipData->getCodeLine($fillZeros)];
+                $paymentSlipData->getCodeLine(true)];
             $elements['codeLine'] = [
                 'lines' => $lines,
                 'attributes' => $this->getCodeLineAttr()

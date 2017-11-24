@@ -217,7 +217,7 @@ class OrangePaymentSlipData extends PaymentSlipData
 
         $completeReferenceNumber = $referenceNumber;
         if ($notForPayment) {
-            $completeReferenceNumber = str_pad($referenceNumber, 26, 'X', STR_PAD_LEFT);
+            $completeReferenceNumber = str_pad($referenceNumber, 16, 'X', STR_PAD_LEFT);
         } elseif ($this->getWithBankingCustomerId()) {
             // Get reference number and fill with zeros
             $referenceNumber = str_pad($referenceNumber, 20, '0', STR_PAD_LEFT);
@@ -225,7 +225,7 @@ class OrangePaymentSlipData extends PaymentSlipData
             $completeReferenceNumber = $this->getBankingCustomerId() . $referenceNumber;
         } elseif ($fillZeros) {
             // Get reference number and fill with zeros
-            $completeReferenceNumber = str_pad($referenceNumber, 26, '0', STR_PAD_LEFT);
+            $completeReferenceNumber = str_pad($referenceNumber, 16, '0', STR_PAD_LEFT);
         }
 
         // Add check digit
@@ -280,7 +280,7 @@ class OrangePaymentSlipData extends PaymentSlipData
             $amountCheck = '2';
         }
         if ($fillZeros) {
-            $referenceNumberPart = str_pad($referenceNumber, 27, '0', STR_PAD_LEFT);
+            $referenceNumberPart = str_pad($referenceNumber, 17, '0', STR_PAD_LEFT);
         } else {
             $referenceNumberPart = $referenceNumber;
         }

@@ -2,11 +2,14 @@
 All notable changes to this project are documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased](https://github.com/ravage84/SwissPaymentSlip/compare/0.12.2...master)
-### Added
-
+## [0.12.3](https://github.com/ravage84/SwissPaymentSlip/compare/0.12.2...master)
 ### Changed
 - Add PHP 7.2 by name in Travis as PHP nightly seems to be PHP 7.3-dev
+
+### Changes for MEOS
+- Print fill zeros (to the left of the reference number) in the code line but not in the upper reference number fields.
+- Reduce the number of padded zeros from the maximum allowed of 26, to the minimum required of 16 digits.
+
 
 ### Fixed
 
